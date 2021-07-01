@@ -10,11 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
 import java.io.PrintWriter;
 
 @Controller
@@ -32,21 +29,20 @@ public class UserController {
     @RequestMapping("/testVoid")
     public void testVoid(HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("testVoid方法执行了。。。");
-        //1、请求转发
-        request.getRequestDispatcher("/WEB-INF/pages/success.jsp").forward(request,response);
+        //1、请求转发 不会再调用视图解析器，需要写完整的资源路径
+//        request.getRequestDispatcher("/pages/success.jsp").forward(request,response);
 
         //2、重定向
 //        response.sendRedirect(request.getContextPath()+"/index.jsp");
-//        response.sendRedirect(request.getContextPath()+"/user/testString");
+//        response.sendRedirect(request.getContextPath()+"/user/testVoid2");
 
         //3、直接打印
         //解决中文乱码
-//        response.setCharacterEncoding("UTF-8");
-//        response.setContentType("text/html;charset=UTF-8");
-//        PrintWriter writer = response.getWriter();
-//        writer.print("hello,<br>");
-//        writer.print("<a href='#'>朱俊伟</a>。");
-//        return ;
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter writer = response.getWriter();
+        writer.print("hello,<br>");
+        writer.print("<a href='#'>朱俊伟</a>。");
     }
 
     @RequestMapping("/testModelAndView")
@@ -68,7 +64,7 @@ public class UserController {
     }
 
     /**
-     * 使用关键字的方式进行转发或者重定向
+     * 使用关键字的方式进行转发或者重定向，不会用到视图解析器
      * @return
      */
     @RequestMapping("/testForwardOrRedirect")
@@ -76,15 +72,16 @@ public class UserController {
         System.out.println("testForwardOrRedirect方法执行了。。。");
 
         //请求转发
-//        return "forward:/WEB-INF/pages/success.jsp";
+//        return "forward:/pages/success.jsp";
 
-        //重定向
+        //重定向 不用加项目名称
 //        return "redirect:/index.jsp";
         return "redirect:/user/testString";
     }
 
     @RequestMapping("/testAjax")
-    public @ResponseBody User testAjax(@RequestBody User user){
+    @ResponseBody
+    public User testAjax(@RequestBody User user){
         System.out.println("testAjax方法执行了。。。。");
         System.out.println(user);
         User resUser = new User();
@@ -95,7 +92,8 @@ public class UserController {
     }
 
     @RequestMapping("/testJson1")
-    public @ResponseBody User testJson1() {
+    @ResponseBody
+    public User testJson1() {
         System.out.println("testJson1方法执行了。。。。");
         User resUser = new User();
         resUser.setUsername("朱俊伟");
