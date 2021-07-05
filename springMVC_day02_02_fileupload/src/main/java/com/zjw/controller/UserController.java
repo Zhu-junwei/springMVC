@@ -3,7 +3,6 @@ package com.zjw.controller;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.stereotype.Controller;
@@ -78,6 +77,7 @@ public class UserController {
         System.out.println("跨服务器文件上传。。。");
         //先获取到要上传的文件目录
         String path = "http://localhost:9090/2/img/";
+//        String path = "http://192.168.234.128:8080/fu/img/";
 
         //获取到文件上传的名字
         String fileName = upload.getOriginalFilename();
