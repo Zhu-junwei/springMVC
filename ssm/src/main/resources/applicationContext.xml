@@ -23,9 +23,9 @@
     <!--配置连接池-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://192.168.234.128:3306/ssm?useSSL=false&amp;serverTimeZone=Asia/Shanghai"/>
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/ssm?useSSL=false&amp;serverTimeZone=Asia/Shanghai"/>
         <property name="user" value="root"/>
-        <property name="password" value="a@123456"/>
+        <property name="password" value="123456"/>
     </bean>
 
     <!--配置SqlSessionFactory工厂-->
