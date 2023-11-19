@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * @author 朱俊伟
+ */
 @Service("accountService")
 public class AccountServiceImpl implements AccountService {
 
@@ -24,7 +27,5 @@ public class AccountServiceImpl implements AccountService {
     public void saveAccount(Account account) {
         System.out.println("AccountServiceImpl....saveAccount方法...");
         accountDao.saveAccount(account);
-        int a = 1/0;
-
     }
 }

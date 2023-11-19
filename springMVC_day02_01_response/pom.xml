@@ -17,11 +17,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <spring.version>5.0.2.RELEASE</spring.version>
-    <jackson.version>2.12.3</jackson.version>
-    <joda-time.version>2.3</joda-time.version>
+    <spring.version>5.3.20</spring.version>
+    <jackson.version>2.13.3</jackson.version>
+    <joda-time.version>2.10.14</joda-time.version>
+    <lombok.version>1.18.24</lombok.version>
     <servlet-api.version>2.5</servlet-api.version>
-    <jsp-api.version>2.0</jsp-api.version>
+    <jsp-api.version>2.2</jsp-api.version>
   </properties>
 
   <dependencies>
@@ -34,6 +35,12 @@
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
       <version>${servlet-api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>

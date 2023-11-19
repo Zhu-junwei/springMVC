@@ -14,15 +14,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
+/**
+ * @author 朱俊伟
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
+    /**
+     * 测试返回字符串
+     * @param model model
+     * @return 返回的字符串，通过视图解析器调整到jsp页面
+     */
     @RequestMapping("/testString")
     public String testString(Model model){
         System.out.println("testString方法执行了。。。");
-        User user = new User("朱俊伟","123456",18);
+        User user = new User("zjw哈哈","123456",18);
         model.addAttribute("user",user);
+        //相当于重定向
         return "success";
     }
 
@@ -71,7 +80,7 @@ public class UserController {
     public String testForwardOrRedirect(){
         System.out.println("testForwardOrRedirect方法执行了。。。");
 
-        //请求转发
+        //请求转发 这个也会自动识别项目名
 //        return "forward:/pages/success.jsp";
 
         //重定向 不用加项目名称
@@ -91,6 +100,9 @@ public class UserController {
         return resUser;
     }
 
+    /**
+     * ResponseBody注解会将对象转为json格式
+     */
     @RequestMapping("/testJson1")
     @ResponseBody
     public User testJson1() {

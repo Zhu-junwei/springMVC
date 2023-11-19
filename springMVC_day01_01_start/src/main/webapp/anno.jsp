@@ -11,23 +11,23 @@
     <title>anno</title>
 </head>
 <body>
-    <a href="/anno/testRequestParam?username=朱俊伟">RequestParam(参数username)</a><br>
-    <a href="/anno/testRequestParam?name=朱俊伟">RequestParam2(参数name)</a><br>
-    <a href="/anno/testRequestParam?name=朱俊伟&password=123">RequestParam3(参数name,password)</a><br>
+    <a href="${pageContext.request.contextPath}/anno/testRequestParam?username=朱俊伟">RequestParam(参数username)</a><br>
+    <a href="${pageContext.request.contextPath}/anno/testRequestParam?name=朱俊伟">RequestParam2(参数name)</a><br>
+    <a href="${pageContext.request.contextPath}/anno/testRequestParam?name=朱俊伟&password=123">RequestParam3(参数name,password)</a><br>
     <hr>
-    <form action="/anno/saveUser" method="post">
+    <form action="${pageContext.request.contextPath}/anno/testRequestBody" method="post">
         用户名：<input type="text" name="username"><br>
         年龄：<input type="number" name="age"><br>
         <input type="submit" value="提交">
     </form><br>
 
-    <a href="/anno/testPathVariable/10">testPathVariable</a><br>
+    <a href="${pageContext.request.contextPath}/anno/testPathVariable/10">testPathVariable</a><br>
 
-    <a href="/anno/testRequestHeader">testRequestHeader</a><br>
+    <a href="${pageContext.request.contextPath}/anno/testRequestHeader">testRequestHeader</a><br>
 
-    <a href="/anno/testCookieValue">testCookieValue</a><br>
+    <a href="${pageContext.request.contextPath}/anno/testCookieValue">testCookieValue</a><br>
 
-    <form action="/anno/testModelAttribute" method="post">
+    <form action="${pageContext.request.contextPath}/anno/testModelAttribute" method="post">
         用户名：<input type="text" name="uname"><br>
         年龄：<input type="number" name="age"><br>
         <input type="submit" value="提交">

@@ -2,10 +2,13 @@ package com.zjw.exception;
 
 /**
  * 自定义异常类
+ * @author 朱俊伟
  */
 public class SysException extends Exception {
 
-    //存储提示信息
+    /**
+     * 存储提示信息
+     */
     private String message ;
 
     @Override

@@ -1,10 +1,32 @@
 package com.zjw.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
 
+/**
+ * @author 朱俊伟
+ */
+@Getter
+@Setter
+@ToString
 public class User implements Serializable {
+
+    /**
+     * 用户名
+     */
     private String username;
+
+    /**
+     * 密码
+     */
     private String password;
+
+    /**
+     * 年龄
+     */
     private Integer age;
 
     public User() {
@@ -14,38 +36,5 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
         this.age = age;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", age=" + age +
-                '}';
     }
 }

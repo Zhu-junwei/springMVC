@@ -11,6 +11,8 @@
     <title>index</title>
 </head>
 <body>
-    <a href="http://www.baidu.com" target="_blank">百度</a>
+    <%--测试返回字符串--%>
+    <a href="${pageContext.request.contextPath}/user/testString">/user/testString</a><br/>
+    <a href="https://www.baidu.com" target="_blank">百度</a>
 </body>
 </html>

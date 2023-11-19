@@ -3,7 +3,6 @@ package com.zjw.controller;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.stereotype.Controller;
@@ -15,10 +14,19 @@ import java.io.File;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @author 朱俊伟
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
+    /**
+     * 不知道为什么，上传的list里面是空的。
+     * @param request
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("fileUpload")
     public String fileUpload(HttpServletRequest request) throws Exception {
         //先获取到要上传的文件目录
@@ -73,11 +81,18 @@ public class UserController {
         return "success";
     }
 
+    /**
+     * 暂时不能上传中文名字文件，不知道为啥
+     * @param upload
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("fileUpload3")
     public String fileUpload3(MultipartFile upload) throws Exception {
         System.out.println("跨服务器文件上传。。。");
         //先获取到要上传的文件目录
-        String path = "http://localhost:9090/2/img/";
+//        String path = "http://localhost:9090/2/img/";
+        String path = "http://192.168.234.128:8080/2/img/";
 
         //获取到文件上传的名字
         String fileName = upload.getOriginalFilename();
@@ -90,8 +105,8 @@ public class UserController {
         //连接图片服务器
         WebResource webResource = client.resource(path+fileName);
         //上传文件
-//        webResource.put(upload.getBytes());
-        webResource.post(upload.getBytes());
+        webResource.put(upload.getBytes());
+//        webResource.post(upload.getBytes());
         return "success";
     }
 

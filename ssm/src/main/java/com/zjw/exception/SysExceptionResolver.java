@@ -1,6 +1,5 @@
 package com.zjw.exception;
 
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -9,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 异常处理器
+ * @author 朱俊伟
  */
 public class SysExceptionResolver implements HandlerExceptionResolver {
 

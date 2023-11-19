@@ -4,12 +4,15 @@ import com.zjw.exception.SysException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * @author 朱俊伟
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
-    @RequestMapping("testException")
-    public String testException() throws Exception {
+    @RequestMapping("/testException")
+    public String testException() throws SysException {
         System.out.println("testException方法执行了。。。。");
         try {
             int a = 1/0 ;

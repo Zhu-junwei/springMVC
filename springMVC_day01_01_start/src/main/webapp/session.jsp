@@ -11,9 +11,9 @@
     <title>session</title>
 </head>
 <body>
-    <a href="/sessionAttribute/testPut">put SessionAttribute</a><br>
-    <a href="/sessionAttribute/testGet">get SessionAttribute</a><br>
-    <a href="/sessionAttribute/testDel">delete SessionAttribute</a><br>
+    <a href="${pageContext.request.contextPath}/sessionAttribute/testPut">put SessionAttribute</a><br>
+    <a href="${pageContext.request.contextPath}/sessionAttribute/testGet">get SessionAttribute</a><br>
+    <a href="${pageContext.request.contextPath}/sessionAttribute/testDel">delete SessionAttribute</a><br>
 
 </body>
 </html>

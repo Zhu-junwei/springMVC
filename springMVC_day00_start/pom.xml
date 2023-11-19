@@ -13,7 +13,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.version>5.2.15.RELEASE</spring.version>
+        <spring.version>5.3.20</spring.version>
+        <jsp-api.version>2.2</jsp-api.version>
+        <servlet-api.version>2.5</servlet-api.version>
+        <joda-time.version>2.10.14</joda-time.version>
     </properties>
 
     <dependencies>
@@ -25,20 +28,20 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <version>${servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
-            <version>2.0</version>
+            <version>${jsp-api.version}</version>
             <scope>provided</scope>
         </dependency>
         <!--日期转换-->
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
-            <version>2.3</version>
+            <version>${joda-time.version}</version>
         </dependency>
     </dependencies>
 

@@ -27,23 +27,25 @@ public class AnnoController {
 
     /**
      * RequestBody注解
-     *   作用：用于获取请求体的内容（注意：get方法不可以）
+     *   作用：用于获取请求体的内容（注意：get方法不适用）
      *      saveUser(@RequestBody String body)
      *   属性：
      *      required：是否必须有请求体，默认是true
      */
-    @RequestMapping("/saveUser")
+    @RequestMapping("/testRequestBody ")
     public String saveUser(@RequestBody String body){
         System.out.println("@RequestBody-->"+body);
+
         return "success";
     }
 
-    /*
-        PathVariable注解
-            作用：拥有绑定url中的占位符的。例如：url中有/delete/{id}，{id}就是占位符
-            属性：
-                value:指定url中的占位符名称
-
+    /**
+     * PathVariable注解
+     *  作用：用于绑定url中的占位符的。例如：url中有/delete/{id}，{id}就是占位符
+     *      属性：
+     *          value:指定url中的占位符名称
+     * @param id
+     * @return
      */
     @RequestMapping("/testPathVariable/{id}")
     public String testPathVariable(@PathVariable("id") String id){
@@ -51,8 +53,11 @@ public class AnnoController {
         return "success";
     }
 
-    /*
-        RequestHeader注解
+    /**
+     * RequestHeader注解
+     *  作用：用于获取请求消息头
+     * @param header
+     * @return
      */
     @RequestMapping("/testRequestHeader")
     public String testRequestHeader(@RequestHeader("Cookie") String header){
@@ -60,11 +65,13 @@ public class AnnoController {
         return "success";
     }
 
-    /*
-        CookieValue注解
-            作用：用于获取指定cookie的名称的值
-        属性:
-            value：cookie的名称
+    /**
+     * CookieValue注解
+     *      作用：用于获取指定cookie的名称的值
+     * 属性:
+     *      value：cookie的名称
+     * @param header
+     * @return
      */
     @RequestMapping("/testCookieValue")
     public String testCookieValue(@CookieValue("JSESSIONID") String header){
@@ -72,13 +79,15 @@ public class AnnoController {
         return "success";
     }
 
-    /*
-        ModelAttribute注解
-        作用
-            出现在方法上：表示当前方法会在控制器方法执行前线执行。
-            出现在参数上：获取指定的数据给参数赋值。
-        应用场景
-            当提交表单数据不是完整的实体数据时，保证没有提交的字段使用数据库原来的数据。
+    /**
+     * ModelAttribute注解
+     *   作用
+     *       出现在方法上：表示当前方法会在控制器方法执行前执行。
+     *       出现在参数上：获取指定的数据给参数赋值。
+     *   应用场景
+     *       当提交表单数据不是完整的实体数据时，保证没有提交的字段使用数据库原来的数据。
+     * @param user user从map集合中取出
+     * @return 跳转路径
      */
     @RequestMapping("/testModelAttribute")
     public String testModelAttribute(@ModelAttribute("abc") User user){
@@ -90,8 +99,9 @@ public class AnnoController {
      * ModelAttribute注解
      *  会在RequestMapping注解执行之前执行
      */
-//    @ModelAttribute
+    @ModelAttribute
     public void showUser(String uname, Map<String,User> map){
+        //模拟通过name查询User对象
         User user = new User();
         user.setUname(uname);
         user.setAge(18);

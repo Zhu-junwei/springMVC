@@ -11,8 +11,8 @@
     <title>首页</title>
 </head>
 <body>
-    <a href="/account/findAll">查询所有</a>
-    <form action="/account/saveAccount" method="post">
+    <a href="${pageContext.request.contextPath}/account/findAll">查询所有</a>
+    <form action="${pageContext.request.contextPath}/account/saveAccount" method="post">
         姓名：<input type="text" name="name" /><br>
         金额：<input type="text" name="money" /><br>
         <input type="submit" value="保存">

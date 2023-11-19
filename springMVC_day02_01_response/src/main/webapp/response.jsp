@@ -19,6 +19,7 @@
                     url:"user/testAjax",
                     contentType:"application/json;charset=UTF-8",
                     data:'{"username":"土豆是个大傻子","password":"123456","age":20}',
+                    //预期服务器返回的数据类型
                     dataType:"json",
                     type:"post",
                     success:function (data) {
@@ -34,12 +35,12 @@
     </script>
 </head>
 <body>
-    <a href="/user/testString">testString</a><br>
-    <a href="/user/testVoid">testVoid</a><br>
-    <a href="/user/testModelAndView">testModelAndView</a><br>
-    <a href="/user/testForwardOrRedirect">testForwardOrRedirect</a><br>
-    <a href="/user/testJson1">testJson1 返回对象</a><br>
-    <a href="/user/testJson2">testJson2 返回String</a><br>
+    <a href="${pageContext.request.contextPath}/user/testString">testString</a><br>
+    <a href="${pageContext.request.contextPath}/user/testVoid">testVoid</a><br>
+    <a href="${pageContext.request.contextPath}/user/testModelAndView">testModelAndView</a><br>
+    <a href="${pageContext.request.contextPath}/user/testForwardOrRedirect">testForwardOrRedirect</a><br>
+    <a href="${pageContext.request.contextPath}/user/testJson1">testJson1 返回对象</a><br>
+    <a href="${pageContext.request.contextPath}/user/testJson2">testJson2 返回String</a><br>
 
     <button id="btn">发送ajax请求</button>
 </body>

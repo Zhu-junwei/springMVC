@@ -29,7 +29,7 @@
     <mvc:interceptors>
         <!--第一个拦截器-->
         <mvc:interceptor>
-            <!--要拦截的具体方法-->
+            <!--要拦截的具体方法 不写则全部拦截-->
             <mvc:mapping path="/user/**"/>
             <!--不拦截的方法-->
             <!--<mvc:exclude-mapping path=""/>-->

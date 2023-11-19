@@ -7,11 +7,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 自定义日期类型转换器
+ * @author 朱俊伟
+ */
 public class StringToDateConverter implements Converter<String, Date> {
 
     @Override
     public Date convert(String source) {
-        if (source == null || "".equals(source)){
+        if ("".equals(source)){
             System.out.println("请传入数据");
             throw new RuntimeException("请传入数据");
         }

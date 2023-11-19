@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 异常处理器
+ * @author 朱俊伟
  */
 public class SysExceptionResolver implements HandlerExceptionResolver {
 

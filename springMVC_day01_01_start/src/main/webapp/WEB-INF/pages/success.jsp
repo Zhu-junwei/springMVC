@@ -12,8 +12,12 @@
 </head>
 <body>
     <h3>入门程序成功了!!!</h3>
+    <%--request域--%>
     ${ requestScope.name } <br>
+
     ${ name }<br>
+
+    <%--session域--%>
     ${ sessionScope }<br>
 </body>
 </html>

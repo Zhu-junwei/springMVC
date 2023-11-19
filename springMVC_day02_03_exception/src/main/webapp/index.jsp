@@ -5,6 +5,6 @@
 </head>
 <body>
     <h3>测试异常</h3>
-    <a href="/user/testException">测试异常</a>
+    <a href="${pageContext.request.contextPath}/user/testException">测试异常</a>
 </body>
 </html>

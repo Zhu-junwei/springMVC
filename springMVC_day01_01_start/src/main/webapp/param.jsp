@@ -12,11 +12,11 @@
 </head>
 <body>
     <h3>请求参数绑定</h3>
-    <a href="/param/testParam?username=朱俊伟&password=123">请求参数绑定</a><br/>
+    <a href="${pageContext.request.contextPath}/param/testParam?username=朱俊伟&password=123">请求参数绑定</a><br/>
 
     <%--封装到Account对象中--%>
     <h3>封装到Account对象中</h3>
-    <form method="post" action="/param/saveAccount">
+    <form method="post" action="${pageContext.request.contextPath}/param/saveAccount">
         姓名：<input type="text" name="username"/><br>
         密码：<input type="password" name="password"/><br>
         金额：<input type="number" name="money"/><br>
@@ -24,9 +24,10 @@
         年龄：<input type="number" name="user.age"/><br>
         <input type="submit" value="提交"/><br>
     </form><br>
+
     <%--封装到Account对象中,包含集合--%>
     <h3>封装到Account对象中，包含集合</h3>
-    <form method="post" action="/param/saveAccount">
+    <form method="post" action="${pageContext.request.contextPath}/param/saveAccount">
         姓名：<input type="text" name="username"/><br>
         密码：<input type="password" name="password"/><br>
         金额：<input type="number" name="money"/><br>
@@ -43,14 +44,14 @@
     </form><br>
 
     <h3>封装到User对象中，包含日期类型</h3>
-    <form method="post" action="/param/saveUser">
+    <form method="post" action="${pageContext.request.contextPath}/param/saveUser">
         姓名：<input type="text" name="uname"/><br>
         年龄：<input type="number" name="age"/><br>
         生日：<input type="text" name="date"><br>
         <input type="submit" value="提交"/><br>
     </form><br>
 
-    <a href="/param/testServlet?username=朱俊伟&password=123">Servlet原生的API</a><br/>
+    <a href="${pageContext.request.contextPath}/param/testServlet?username=朱俊伟&password=123">Servlet原生的API</a><br/>
 
 
 </body>

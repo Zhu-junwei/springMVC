@@ -15,14 +15,17 @@
 <body>
     <h3>入门程序</h3>
     <%--
-        ${pageContext.request.contextPath} 可以省略不写
+        ${pageContext.request.contextPath} 建议不要在 JSP 中使用绝对路径
+        <a href="${pageContext.request.contextPath}/user/hello">入门程序(/user/hello)</a><br/>
     --%>
-    <a href="/user/hello">入门程序(/user/hello)</a><br/>
-    <a href="/user/hello2">入门程序(/user/hello2)</a><br/>
+    <a href="${pageContext.request.contextPath}/user/hello">入门程序(/user/hello)</a><br/>
+    <a href="${pageContext.request.contextPath}/user/hello2">入门程序(/user/hello2)</a><br/>
 
-    <a href="/user/testParams?username">测试请求参数(/user/testParams?username)</a><br/>
+    <a href="${pageContext.request.contextPath}/user/testParams?username">测试请求参数(/user/testParams?username)</a><br/>
+    <a href="${pageContext.request.contextPath}/user/testParams">测试请求参数，没有username属性(/user/testParams)</a><br/>
+    <a href="${pageContext.request.contextPath}/user/testParams2?username=aaa">测试请求参数，username=aaa(/user/testParams2?username=aaa)</a><br/>
 
-    <a href="/user/testHeaders">测试请求头(/user/testHeaders)</a>
+    <a href="${pageContext.request.contextPath}/user/testHeaders">测试请求头(/user/testHeaders)</a>
 
 </body>
 </html>
